@@ -22,4 +22,7 @@ then
 	fi
 fi
 
+echo "changedfiles "
+echo $changedFiles
+echo "$@" -- $changedFiles
 set -o pipefail && swiftlint "$@" -- $changedFiles | stripPWD | convertToGitHubActionsLoggingCommands
